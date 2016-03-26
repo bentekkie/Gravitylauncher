@@ -184,6 +184,7 @@ public class MyGdxGame extends ApplicationAdapter implements GestureDetector.Ges
 			ArrayList temp = (ArrayList)pair.getValue();
 			Sprite sprite = (Sprite)temp.get(0);
 			Body body = (Body)temp.get(1);
+			body.setAwake(true);
 			sprite.setPosition((body.getPosition().x * PIXELS_TO_METERS) - sprite.getWidth()/2 ,
 					(body.getPosition().y * PIXELS_TO_METERS) -sprite.getHeight()/2 );
 			sprite.setRotation((float)Math.toDegrees(body.getAngle()));
@@ -276,10 +277,10 @@ public class MyGdxGame extends ApplicationAdapter implements GestureDetector.Ges
 
 		final Body body = world.createBody(bodyDef);
 		body.setUserData(packageName);
+		bodyDef.allowSleep = false;
+		body.setSleepingAllowed(false);
 		CircleShape shape = new CircleShape();
 		shape.setRadius(s.getWidth() / 2 / PIXELS_TO_METERS);
-		
-
 		FixtureDef fixtureDef = new FixtureDef();
 		fixtureDef.shape = shape;
 		fixtureDef.density = 0.1f;
