@@ -1,5 +1,6 @@
 # Gravitylauncher
-Source for Gravity Launcher. Only works on android :P
+Source for Gravity Launcher. 
+Only works on android :P [Install apk](android-release.apk)
 Makes all your app icons obey physics
 [Video demo](https://youtu.be/OdNm7c263Xc)
 https://youtu.be/OdNm7c263Xc
